@@ -1,0 +1,51 @@
+body {
+  height: 100vh;
+  color: white;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#header {
+  background-color: #070103;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  width: 100vw;
+}
+#header button {
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 2em;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+  width: 200px;
+}
+#header button:hover,
+#header .selected {
+  background-color: #3c1203;
+  text-shadow: gold 0 0 2px;
+}
+#main {
+  height: calc(100vh - 50px);
+  width: 100vw;
+  background-image: url(./Photos/blackKnight.png);
+  background-repeat: no-repeat;
+  background-size: cover !important;
+  position: relative;
+}
+
+#title-container {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  text-align: start;
+  font-size: 3em;
+  font-weight: 900;
+  margin: 0 auto;
+  color: white;
+}
