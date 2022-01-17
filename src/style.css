@@ -1,6 +1,7 @@
 body {
   height: 100vh;
   color: white;
+  background-color: #070103;
 }
 * {
   margin: 0;
@@ -33,9 +34,6 @@ body {
 #main {
   height: calc(100vh - 50px);
   width: 100vw;
-  background-image: url(./Photos/blackKnight.png);
-  background-repeat: no-repeat;
-  background-size: cover !important;
   position: relative;
 }
 
@@ -48,4 +46,69 @@ body {
   font-weight: 900;
   margin: 0 auto;
   color: white;
+}
+h3 {
+  font-size: 3rem;
+}
+#title-drink-container {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 3em;
+  text-align: right;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 20vh;
+  column-gap: 10px;
+}
+#main-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+h5 {
+  font-size: 1.7rem;
+}
+
+#menu-background {
+  position: absolute;
+  width: 60%;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+#drinks-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  width: 50%;
+}
+
+#drink-container {
+  width: 50%;
+}
+#title-drink-photo {
+  width: 25%;
+}
+.item-container {
+  display: flex;
+  text-align: right;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 20vh;
+  column-gap: 10px;
+}
+.item-container img {
+  width: 15%;
+}
+main {
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
 }
