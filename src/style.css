@@ -34,7 +34,11 @@ body {
 #main {
   height: calc(100vh - 50px);
   width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   position: relative;
+  column-gap: 0;
 }
 
 #title-container {
@@ -50,9 +54,10 @@ body {
 h3 {
   font-size: 3rem;
 }
-#title-drink-container {
+#title-drink-container,
+#title-food-container {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
   font-size: 3em;
   text-align: right;
   justify-content: center;
@@ -84,14 +89,21 @@ h5 {
 #drinks-container {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  width: 50%;
+  justify-content: center;
+  align-items: end;
+  row-gap: 3.5em;
+  transform: translateY(-52px) translateX(-25px);
+}
+#drinks-container .item-container:nth-child(even) {
+  transform: translateX(-150px);
+}
+#food-container .item-container:nth-child(even) {
+  transform: translateX(80px);
+}
+.item-container:nth-child(odd) {
+  transform: translateX(-41px);
 }
 
-#drink-container {
-  width: 50%;
-}
 #title-drink-photo {
   width: 25%;
 }
@@ -101,14 +113,31 @@ h5 {
   justify-content: center;
   align-items: center;
   width: fit-content;
-  height: 20vh;
   column-gap: 10px;
+  padding: 0.5rem;
+  transition: 0.3s ease-in;
+  cursor: pointer;
 }
 .item-container img {
-  width: 15%;
+  width: 80px;
+  height: 80px;
 }
-main {
+
+#food-container {
   display: flex;
-  justify-content: stretch;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  transform: translateY(-16px);
+  row-gap: 3.5em;
+}
+#title-food-container {
+  display: flex;
+  transform: translateX(-40px);
+}
+#elizabeth {
+  width: 200px;
+}
+.item-container:hover {
+  background: rgba(95, 29, 5, 0.671);
 }
