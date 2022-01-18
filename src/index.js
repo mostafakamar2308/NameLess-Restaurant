@@ -12,7 +12,6 @@ function importAll(r) {
 const drinkImages = importAll(
   require.context("./photos/drinks", false, /\.(png|jpe?g|svg)$/)
 );
-console.log(drinkImages);
 const foodImages = importAll(
   require.context("./photos/food", false, /\.(png|jpe?g|svg)$/)
 );
@@ -115,14 +114,14 @@ function menuPage() {
   let titleContainer = document.createElement("div");
   titleContainer.id = "title-drink-container";
 
-  let drinksTitle = document.createElement("h3");
-  drinksTitle.innerText = "DRIKS";
-  titleContainer.appendChild(drinksTitle);
-
   let estus = document.createElement("img");
   estus.src = stockImages["estus flask.png"].default;
   estus.id = "title-drink-photo";
   titleContainer.appendChild(estus);
+
+  let drinksTitle = document.createElement("h3");
+  drinksTitle.innerText = "DRIKS";
+  titleContainer.appendChild(drinksTitle);
   drinks.appendChild(titleContainer);
 
   main.appendChild(drinks);
@@ -133,9 +132,15 @@ function menuPage() {
 
   let foods = document.createElement("div");
   foods.id = "food-container";
+  main.appendChild(foods);
 
   let titleFoodContainer = document.createElement("div");
   titleFoodContainer.id = "title-food-container";
+
+  let foodTitlePic = document.createElement("img");
+  foodTitlePic.src = stockImages["Elizabeth-Mushroom.png"].default;
+  foodTitlePic.id = "elizabeth";
+  titleFoodContainer.appendChild(foodTitlePic);
 
   let foodTitle = document.createElement("h3");
   foodTitle.innerText = "Food";
@@ -143,7 +148,9 @@ function menuPage() {
 
   foods.appendChild(titleFoodContainer);
 
-  main.appendChild(foods);
+  for (let i = 0; i < Object.keys(foodImages).length; i++) {
+    makeMenuItems(foodImages, Object.keys(foodImages)[i]);
+  }
 }
 
 //make a factory function for image + title
@@ -162,10 +169,11 @@ function makeMenuItems(container, name) {
   itemContainer.appendChild(itemImg);
 
   let itemDiscreption = document.createElement("h5");
-  itemDiscreption.innerText = name;
+  itemDiscreption.innerText = name.slice(0, -4);
   itemContainer.appendChild(itemDiscreption);
   if (container == drinkImages) {
     document.querySelector("#drinks-container").appendChild(itemContainer);
   } else if (container == foodImages) {
+    document.querySelector("#food-container").appendChild(itemContainer);
   }
 }
