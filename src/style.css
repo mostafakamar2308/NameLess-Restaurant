@@ -141,3 +141,19 @@ h5 {
 .item-container:hover {
   background: rgba(95, 29, 5, 0.671);
 }
+#sigward {
+  width: 40%;
+  position: absolute;
+  left: 0;
+  transform: rotateY(180deg);
+}
+#talk {
+  position: absolute;
+  font-size: 2.5rem;
+  width: 50%;
+  height: 50%;
+  top: 10vh;
+  right: 10vw;
+  padding: 1rem;
+  border: 3px solid white;
+}

@@ -38,18 +38,18 @@ function createButtons(name) {
       header.children[i].classList.remove("selected");
     }
     main.innerHTML = "";
+    btn.classList.add("selected");
     switch (btn.id) {
       case "home":
         homePage();
         break;
 
       case "menu":
-        btn.classList.add("selected");
         menuPage();
         break;
 
       case "about":
-        btn.classList.add("selected");
+        aboutPage();
         break;
     }
   });
@@ -71,7 +71,6 @@ contentContainer.appendChild(footer);
 //make a function for the home page structure
 function homePage() {
   document.querySelector("#home").classList.add("selected");
-
   //create container for the two items
   let container = document.createElement("div");
   container.id = "title-container";
@@ -176,4 +175,18 @@ function makeMenuItems(container, name) {
   } else if (container == foodImages) {
     document.querySelector("#food-container").appendChild(itemContainer);
   }
+}
+
+function aboutPage() {
+  let sigward = document.createElement("img");
+  sigward.id = "sigward";
+  sigward.src = stockImages["Siegward.png"].default;
+  main.appendChild(sigward);
+
+  let talk = document.createElement("P");
+  talk.id = "talk";
+  talk.innerText = `Hello I am Mostafa, I am a front-end Developer in training.
+  This Project is one of the projects on The Odin Project platform.
+  I am a huge D.S Fan, So I said "why not use it as an Inspiration" and this website is the result`;
+  main.appendChild(talk);
 }
